@@ -1,0 +1,17 @@
+<div class="card mb-3">
+  <div class="card-header">
+    <b>{{ filterType }}</b>
+  </div>
+  <div class="card-body">
+    <div *ngFor="let d of displayData">
+      <div class="row">
+        <div class="col filter">
+          {{ d.filter }}
+        </div>
+        <div class="col-1 text-right">
+          <a class="link-primary" (click)="emitFilter(d.filter)">{{ d.value }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

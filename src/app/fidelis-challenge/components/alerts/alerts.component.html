@@ -1,0 +1,15 @@
+<h1 class="mt-2 header text-center">Fidelis Cybersecurity UI Challenge</h1>
+<div class="container mt-2">
+  <div class="card">
+    <div class="card-header text-white bg-secondary">
+      <h6>Total Alerts: {{ totalAlerts }}</h6>
+    </div>
+    <div *ngIf="alerts?.length" class="card-body">
+      <selected-filters [filters]="filters" (resetFiltersEmitter)="handleFilterReset()"></selected-filters>
+      <alert-filter [filterType]="FilterTypes.SEVERITY" [alerts]="alerts" [filters]="filters" (filterSelectedEmitter)="handleFilterSelection($event)"></alert-filter>
+      <alert-filter [filterType]="FilterTypes.IP"       [alerts]="alerts" [filters]="filters" (filterSelectedEmitter)="handleFilterSelection($event)"></alert-filter>
+      <alert-filter [filterType]="FilterTypes.PROTOCOL" [alerts]="alerts" [filters]="filters" (filterSelectedEmitter)="handleFilterSelection($event)"></alert-filter>
+      <alert-filter [filterType]="FilterTypes.COUNTRY"  [alerts]="alerts" [filters]="filters" (filterSelectedEmitter)="handleFilterSelection($event)"></alert-filter>
+    </div>
+  </div>
+</div>

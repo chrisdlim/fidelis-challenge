@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col">
+    <p>Filters:
+      <span class="spaced badge bg-primary" *ngFor="let filter of selectedFilters">{{ filter }}</span>
+    </p>
+  </div>
+  <div class="col-1 text-right">
+    <button *ngIf="selectedFilters?.length" class="btn btn-xs btn-primary" (click)="resetFilters()">Reset</button>
+  </div>
+</div>
